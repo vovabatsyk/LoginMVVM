@@ -1,0 +1,106 @@
+﻿<Window x:Class="Button.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Button"
+        mc:Ignorable="d"
+        Background="Black"
+        Title="Buttons" Height="180" Width="395.818" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <ControlTemplate x:Key="btn1" TargetType="Button">
+            <Border>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition  Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle x:Name="rect1" Grid.Column="0" Fill="#007E8D" Height="25" Width="10"></Rectangle>
+                    <Rectangle x:Name="rect2" Grid.Column="1" Fill="#007E8D" Height="35"></Rectangle>
+                    <Rectangle x:Name="rect3" Grid.Column="2" Fill="#007E8D" Height="25" Width="10"></Rectangle>
+                    <ContentPresenter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="rect1" Property="Rectangle.Fill" Value="Blue"></Setter>
+                    <Setter TargetName="rect2" Property="Rectangle.Fill" Value="Blue"></Setter>
+                    <Setter TargetName="rect3" Property="Rectangle.Fill" Value="Blue"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="rect1" Property="Rectangle.Opacity" Value="0.8" />
+                    <Setter TargetName="rect2" Property="Rectangle.Opacity" Value="0.8" />
+                    <Setter TargetName="rect3" Property="Rectangle.Opacity" Value="0.8" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="btn2" TargetType="Button">
+            <Border>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition  Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle x:Name="rect1" Grid.Column="0" Fill="#8DBB8D" Height="25" Width="10"></Rectangle>
+                    <Rectangle x:Name="rect2" Grid.Column="1" Fill="#8DBB8D" Height="35"></Rectangle>
+                    <Rectangle x:Name="rect3" Grid.Column="2" Fill="#8DBB8D" Height="25" Width="10"></Rectangle>
+                    <ContentPresenter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="rect1" Property="Rectangle.Fill" Value="Green"></Setter>
+                    <Setter TargetName="rect2" Property="Rectangle.Fill" Value="Green"></Setter>
+                    <Setter TargetName="rect3" Property="Rectangle.Fill" Value="Green"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="rect1" Property="Rectangle.Opacity" Value="0.8" />
+                    <Setter TargetName="rect2" Property="Rectangle.Opacity" Value="0.8" />
+                    <Setter TargetName="rect3" Property="Rectangle.Opacity" Value="0.8" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="btn3" TargetType="Button">
+            <Border>
+                <Grid Margin="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition  Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Rectangle x:Name="rect1" Grid.Column="0" Fill="#E87F81" Height="25" Width="10"></Rectangle>
+                    <Rectangle x:Name="rect2" Grid.Column="1" Fill="#E87F81" Height="35"></Rectangle>
+                    <Rectangle x:Name="rect3" Grid.Column="2" Fill="#E87F81" Height="25" Width="10"></Rectangle>
+                    <ContentPresenter Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="rect1" Property="Rectangle.Fill" Value="Red"></Setter>
+                    <Setter TargetName="rect2" Property="Rectangle.Fill" Value="Red"></Setter>
+                    <Setter TargetName="rect3" Property="Rectangle.Fill" Value="Red"></Setter>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="rect1" Property="Rectangle.Opacity" Value="0.8" />
+                    <Setter TargetName="rect2" Property="Rectangle.Opacity" Value="0.8" />
+                    <Setter TargetName="rect3" Property="Rectangle.Opacity" Value="0.8" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Window.Resources>
+
+    <StackPanel>
+        <Button  Content="Close App" Click="CloseApp_Click" Template="{StaticResource btn3}" />
+        <Button  Content="Regular Button" Template="{StaticResource btn1}" />
+        <Button  Content="Accept Button" Template="{StaticResource btn2}" />
+        <Button  Content="Decline Button" Template="{StaticResource btn3}" />
+    </StackPanel>
+
+</Window>
